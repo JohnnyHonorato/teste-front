@@ -1,0 +1,38 @@
+<div class="page-header">
+    <h4 class="page-title">
+        <i class="fa fa-user mr-1"></i>
+        Usuarios
+    </h4>
+</div>
+<div class="row">
+    <form [formGroup]="form" class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Dados</div>
+            </div>
+            <div class="card-body">
+                <div class="row" [formGroup]="form">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label class="form-label">Titulo</label>
+                            <input type="text" class="form-control" placeholder="Titulo" formControlName="title"
+                                [ngClass]="hasError(form.get('title'))">
+                            <app-mensagem-error [control]="form.get('title')"></app-mensagem-error>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Preco</label>
+                            <input type="number" class="form-control" placeholder="Preco" formControlName="price"
+                                [ngClass]="hasError(form.get('price'))">
+                            <app-mensagem-error [control]="form.get('price')"></app-mensagem-error>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary" style="margin-right: 10px;"
+                            (click)="onSubmit()">Submit</button>
+                        <button (click)="back()" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
