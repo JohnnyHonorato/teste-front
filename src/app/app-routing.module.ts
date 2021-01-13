@@ -7,7 +7,7 @@ const routes: Routes = [
         path: '', component: BaseLayoutComponent, children: [
             {
                 path: '',
-                loadChildren: 'src/app/components/user/user.module#UserModule',
+                loadChildren: 'src/app/components/product/product.module#ProductModule',
             }
         ]
     },

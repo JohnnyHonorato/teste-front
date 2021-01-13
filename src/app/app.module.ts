@@ -6,12 +6,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from './app-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
-import {UserModule} from './components/user/user.module';
 import {NotifierModule, NotifierOptions} from 'angular-notifier';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MAT_DATE_LOCALE} from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { ProductModule } from './components/product/product.module';
 
 const customNotifierOptions: NotifierOptions = {
     position: {
@@ -37,11 +37,11 @@ const customNotifierOptions: NotifierOptions = {
         NgbModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        UserModule,
         NotifierModule.withConfig(customNotifierOptions),
         BrowserAnimationsModule,
         HttpClientModule,
-        CoreModule
+        CoreModule,
+        ProductModule
     ],
     providers: [
         {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
